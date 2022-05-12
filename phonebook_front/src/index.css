@@ -1,0 +1,38 @@
+h2 {
+  color: green;
+  font-style: italic;
+}
+
+li {
+  color: rgba(133, 131, 131, 0.998);
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+button {
+  background-color: rgb(213, 28, 74);
+  color: whitesmoke;
+  border-style: hidden;
+}
+.add {
+  background-color: rgb(9, 124, 3);
+}
+input{
+  border: none;
+  border-bottom: 2px solid grey;}
+
+input:focus {
+  border: none;
+  border-bottom: 3px solid green;
+}
+body{
+  margin:auto;
+  width: 50%;
+  border: 3px solid green;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: light grey;
+}
+div{
+  color: rgba(133, 131, 131, 0.998);
+}
