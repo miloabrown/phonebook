@@ -35,4 +35,9 @@ body{
 }
 div{
   color: rgba(133, 131, 131, 0.998);
+  margin:auto;
+  width:70%
+}
+.form {
+  width: 100%;
 }

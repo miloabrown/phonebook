@@ -76,21 +76,21 @@ export default class App extends React.Component {
               : this.addPerson
           }
         >
-          <div>
+          <div className="form">
             Name:{" "}
             <input
               value={this.state.newName}
               onChange={this.handleNameChange}
             />
           </div>
-          <div>
+          <div className="form">
             Number:{" "}
             <input
               value={this.state.newNumber}
               onChange={this.handleNumberChange}
             />
           </div>
-          <div>
+          <div className="form">
             <button type="submit" className="add">
               Add
             </button>
