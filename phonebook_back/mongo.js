@@ -1,21 +1,35 @@
 const mongoose = require("mongoose");
-const { mongourl } = require("./mongourl");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const url = mongourl;
+var name = process.argv[2];
+var number = process.argv[3];
 
-mongoose.connect(url);
+mongoose.connect(process.env.MONGODB_URI, (err) => {
+  if (err) console.log(err);
+  else console.log("mongdb is connected");
+});
 
 const Person = mongoose.model("Person", {
   name: String,
   number: String,
 });
 
-const person = new Person({
-  name: "Arto Hellas",
-  number: "040-123345",
-});
-
-person2.save().then((response) => {
-  console.log("person saved!");
-  mongoose.connection.close();
-});
+if (name && number) {
+  const person = new Person({
+    name: name,
+    number: number,
+  });
+  person.save().then((response) => {
+    console.log("person saved!", response);
+    mongoose.connection.close();
+  });
+} else {
+  Person.find({}).then((result) => {
+    console.log("Phonebook:");
+    result.forEach((person) => {
+      console.log(person.name, person.number);
+    });
+    mongoose.connection.close();
+  });
+}

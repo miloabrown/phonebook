@@ -14,6 +14,7 @@ export default class App extends React.Component {
 
   componentDidMount() {
     personService.getAll().then((response) => {
+      console.log(response);
       this.setState({ persons: response });
     });
   }
